@@ -11,8 +11,8 @@ logDrink();
 var cocktailEl = document.getElementById("Cocktail")
 var liquorEl = document .getElementById("Liquor")
 
-addEventListener("click", (cocktail) => {
-    
+cocktailEl.addEventListener("click", () => {
+    location.href = 'cocktail.html'
 })
 
 var inputCoctail = ""
