@@ -15,5 +15,9 @@ cocktailEl.addEventListener("click", () => {
     location.href = 'cocktail.html'
 })
 
+liquorEl.addEventListener("click", () => {
+    location.href = 'liquor.html'
+})
+
 var inputCoctail = ""
 var drinkUrl =  "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
