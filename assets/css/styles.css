@@ -45,3 +45,8 @@
     outline: none;
     color: antiquewhite;
 }
+#result img {
+    display: block;
+    max-width: 12.5em;
+    margin: auto;
+}
