@@ -88,3 +88,13 @@ grid-template-columns: auto auto;
 #result li {
     margin-bottom: 0.3em;
 }
+#result p {
+    text-align: justify;
+    font-weight: 400;
+    font-size: 0.95em;
+}
+@media screen and (max-width: 600px) {
+    .container {
+        font-size: 14px;
+    }
+}
