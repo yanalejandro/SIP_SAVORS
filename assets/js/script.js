@@ -121,7 +121,11 @@ function displayDrinks(recipe) {
         listItem.innerHTML = value;
         cocktailIngredients.appendChild(listItem);
     }
-    
+
+    var audio= ("soundpour")[0];
+    ("Drink").click(function() {
+        audio.play();
+    });
 };
 
 drinkFormEl.addEventListener('click', drinkInputHandler);
