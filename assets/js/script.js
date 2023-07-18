@@ -25,7 +25,6 @@
 
 var drinkFormEl = document.getElementById('drink')
 var cocktailInput = document.querySelector('#cocktailTxt');
-var drinkContainerEl = document.querySelector('#drink-container');
 var drinkSearchTerm = document.querySelector('#drink-search-term')
 console.log(drinkFormEl);
 
@@ -36,8 +35,6 @@ var drinkInputHandler = function (event) {
 
     if (cocktail) {
         getDrink(cocktail);
-
-        drinkContainerEl.textContent = '';
         cocktailInput.value = '';
     } else {
         alert('Please enter a Cocktail');
@@ -47,7 +44,6 @@ var drinkInputHandler = function (event) {
 
 var getDrink = function (drink) {
     var drinkUrl =  'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + drink ;
-
     fetch(drinkUrl).then(function (response) {
         if (response.ok) {
             console.log(response)
@@ -90,12 +86,17 @@ var getDrink = function (drink) {
 // };
 
 function displayDrinks(recipe) {
+    location.href = 'drink-recipe.html'
     var cocktail = recipe.drinks[0];
     var cocktailDiv = document.getElementById("drink-search-term");
     // cocktail name
+
+
+    cocktailDiv.innerHTML = '';
     var cocktailName = cocktail.strDrink;
     var heading = document.createElement("h1");
     heading.innerHTML = cocktailName;
+    // cocktailDiv.appendChild("");
     cocktailDiv.appendChild(heading);
     // cocktail image
     var cocktailImg = document.createElement("img");
@@ -120,6 +121,7 @@ function displayDrinks(recipe) {
         listItem.innerHTML = value;
         cocktailIngredients.appendChild(listItem);
     }
-}
+    
+};
 
 drinkFormEl.addEventListener('click', drinkInputHandler);
