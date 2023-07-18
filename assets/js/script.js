@@ -86,7 +86,6 @@ var getDrink = function (drink) {
 // };
 
 function displayDrinks(recipe) {
-    location.href = 'drink-recipe.html'
     var cocktail = recipe.drinks[0];
     var cocktailDiv = document.getElementById("drink-search-term");
     // cocktail name
@@ -121,11 +120,15 @@ function displayDrinks(recipe) {
         listItem.innerHTML = value;
         cocktailIngredients.appendChild(listItem);
     }
-
-    var audio= ("soundpour")[0];
-    ("Drink").click(function() {
-        audio.play();
-    });
+    //var audio= ("soundpour")[0];
+    //("drink").click(function() {
+       // audio.play();
+   // });
+   var drink= document.getElementById('drink')
+   var audio= document.getElementById("soundpour")
+    drink.addEventListener("click",function(){
+    })
+    audio.play();
 };
 
 drinkFormEl.addEventListener('click', drinkInputHandler);
