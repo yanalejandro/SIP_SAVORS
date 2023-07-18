@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Cocktail</title>
 </head>
 <body>
-    <body>
-        <header class="text-center">
-            <h1 class="text-3xl font-bold underline">
-                SIP SAVORS
-            </h1> 
-        </header>
+    <header class="text-center">
+        <h1 class="text-3xl font-bold underline">
+            SIP SAVORS
+        </h1> 
+    </header>
     <!------------------------------------READY TO MIX?----------------------------------->
-        <main class="container">
-            <section class="box-border h-32 w-32 p-4 border-4 ... ">
-                <h2>Pick your Drink</h2>
-                <div class="drinknav">
-                    <input id="cocktailTxt" type="text" placeholder="Let's do it..">
-                </div>
-                <button id="Drink">Pour</button>
-            </section>
+    <main class="container">
+        <section class="box-border h-32 w-32 p-4 border-4 ... ">
+            <h2>Pick your Drink</h2>
+            <div class="drinknav">
+                <input id="cocktailTxt" type="text" placeholder="Let's do it..">
+                <button type="submit" id="drink">Pour</button>
+            </div>
+            
+        </section>
 
-            <section >
-                <h2><span id="drink-search-term"></span></h2>
-                <div id="drink-container"></div>
-            </section>
+        <section id="drink-form">
+            <h2><span id="drink-search-term"></span></h2>
+        </section>
+    </main>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
