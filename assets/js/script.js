@@ -3,7 +3,6 @@ var drinkFormEl = document.getElementById('drink')
 var cocktailInput = document.querySelector('#cocktailTxt');
 var drinkSearchTerm = document.querySelector('#drink-search-term')
 var warningEl = document.getElementById('popup-modal')
-var selectedDrink
 //No Text Alert
 var modalHandler = function () {
     //popup-modal disappears
