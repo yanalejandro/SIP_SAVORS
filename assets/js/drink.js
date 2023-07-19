@@ -120,4 +120,4 @@ function displaySong(items) {
 
 backBtnEL.addEventListener('click', ()=>{
     location.href = 'cocktail.html'
-})
+});
