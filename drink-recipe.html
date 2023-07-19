@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Recipe</title>
 </head>
-<body class="flex-column min-100-vh bg-gray-700 text-center place-content-center items-center">
-    <header>
+<body class="flex flex-col flex-wrap min-100-vh bg-gray-700">
+    <header class="text-center h-screen">
         <h1 class="mb-2 text-8xl font-bold tracking-tight text-white">Your Cocktail of Choice</h1>
         
         <div>
@@ -19,17 +19,17 @@
         </div>
     </header>
     
-    <main class="place-content-center block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
+    <main class="items-start justify-center place-content-center block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700 text-center">
         <section id="drink-form" class="place-content-center block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
             
             <h1>
-                <span class="mb-2 text-1xl tracking-tight text-white" id="drink-search-term"></span>
-                <h2 class="mb-2 text-2xl font-bold tracking-tight text-white">Recommended Song</h2>
+                <span class="mb-2 text-2xl font-bold tracking-tight text-white" id="drink-search-term"></span>
+                <h2 class="mb-2 text-3xl font-bold tracking-tight text-white">Recommended Song</h2>
                 <span class="mb-2 text-2xl font-bold tracking-tight text-white" id="song-info"></span>
                 <audio controls>
                     <source id="song-player" />
                 </audio>
-                <a id="song-link" class="felx mb-2 text-2xl font-bold tracking-tight text-white text-center">LINK</a>
+                <a id="song-link" class="mb-2 text-2xl font-bold tracking-tight text-white text-center">LINK</a>
             </h1>
         </section>
     </main>
