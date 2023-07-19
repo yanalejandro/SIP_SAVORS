@@ -8,27 +8,34 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Recipe</title>
 </head>
-<body class="flex-column min-100-vh">
+<body class="flex-column min-100-vh bg-gray-700 text-center place-content-center items-center">
     <header>
 
-        <h1>Your Cocktail of Choice</h1>
+        <h1 class="mb-2 text-8xl font-bold tracking-tight text-white">Your Cocktail of Choice</h1>
         <img rel="img" id="drking" href="./assets/sounds/il_fullxfull.2780059757_6qh8.jpg.avif"/>
-        <h1 class="mb-2 text-2xl font-bold tracking-tight text-white">Your Cocktail of Choice</h1>
+
         <div>
-            <a href="./cocktail.html" class="btn-back">
-            Go Back
-            </a>
+            <button id="back-btn" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                Go Back
+            </button>
         </div>
     </header>
     
-    <main>
-        <section id="drink-form">
+    <main class="place-content-center block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
+        <section id="drink-form" class="place-content-center block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
             
-            <h2 class="allign-center block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
-                <span class="mb-2 text-2xl font-bold tracking-tight text-white" id="drink-search-term"></span>
-            </h2>
+            <h1>
+                <span class="mb-2 text-1xl tracking-tight text-white" id="drink-search-term"></span>
+                <h2 class="mb-2 text-2xl font-bold tracking-tight text-white">Recommended Song</h2>
+                <span class="mb-2 text-2xl font-bold tracking-tight text-white" id="song-info"></span>
+                <audio controls>
+                    <source id="song-player" />
+                </audio>
+                <a id="song-link" class="felx mb-2 text-2xl font-bold tracking-tight text-white text-center">LINK</a>
+            </h1>
         </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="./assets/js/drink.js"></script>
 </body>
 </html>
