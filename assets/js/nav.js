@@ -7,6 +7,3 @@ cocktailEl.addEventListener("click", () => {
     location.href = 'cocktail.html';
 })
 
-liquorEl.addEventListener("click", () => {
-    location.href = 'liquor.html';
-})
