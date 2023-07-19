@@ -2,54 +2,143 @@
 //     const response = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita");
 //     const drinks = await response.json();
 
-//     console.log(drinks)
+//     console.log(drinks);
 
 // };
 
 // logDrink();
-
-var cocktailEl = document.querySelector("#Cocktail");
-var liquorEl = document .querySelector("#Liquor");
+//const url = 'https://spotify23.p.rapidapi.com/playlist/?id=37i9dQZF1DX4Wsb4d7NKfP';
+// const options = {
+//     method: 'GET',
+//     headers: {
+//      'X-RapidAPI-Key': '886b8f4589msh4b5135157d7d5bep1413bajsnc84e14b3155d',
+//      'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+//     }
+//    };
+//    try {
+//     const response = await fetch(url, options);
+//     const result = await response.text();
+//     console.log(result);
+//    } catch (error) {
+//     console.error(error);
+//    }
+var audio = document.getElementById('soundpour');
+var drinkFormEl = document.getElementById('drink')
 var cocktailInput = document.querySelector('#cocktailTxt');
-var drinkContainerEl = document.querySelector('#drink-container');
+var drinkSearchTerm = document.querySelector('#drink-search-term')
+var selectedDrink
 
-cocktailEl.addEventListener("click", () => {
-    location.href = 'cocktail.html';
-})
-
-liquorEl.addEventListener("click", () => {
-    location.href = 'liquor.html';
-})
-
-
-var formSubmitHandler = function (event) {
+var drinkInputHandler = function (event) {
     event.preventDefault();
-    var cocktail = cocktailInput.value.trim();
-    if (cocktail) {
-        getUserRepos(cocktail);
+    audio.play();
+    console.log(cocktailInput.value)
+    var cocktail = cocktailInput.value;
 
-        drinkContainerEl.textContent = '';
-        cocktailInput.value = '';
+    if (cocktail) {
+        // getDrink(cocktail);
+        localStorage.setItem('selected-drink', cocktail);
+        window.location.href = 'drink-recipe.html';
     } else {
         alert('Please enter a Cocktail');
     }
+    console.log('pass')
+    if (window.location.pathname.includes('drink-recipe.html')) {
+        // selectedDrink = localStorage.getItem('selected-drink');
+    }
+    // if (selectedDrink) {
+    //     console.log('getting-drink')
+    //     console.log(selectedDrink)
+    //     getDrink(selectedDrink).then(function(data) {
+    //         displayDrinks(data);
+    //     }).catch(function(error) {
+    //         console.error(error);
+    //     });
+    // }
 };
 
-var getDrink = function (drink) {
-    var drinkUrl =  'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + drink ;
+// var getDrink = function (drink) {
+//     var drinkUrl =  'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + drink ;
+//     fetch(drinkUrl).then(function (response) {
+//         if (response.ok) {
+//             console.log(response)
+//             response.json().then(function (data) {
+//                 console.log(data);
+//                 displayDrinks(data);
+//             });
+//         }
+//     });
+// };
 
-    fetch(drinkUrl).then(function (response) {
-        if (response.ok) {
-            console.log(response)
-            response.json().then(function (data) {
-                console.log(data);
-                displayDrinks(data, drink);
-            });
-        } else {
-            alert('Error: ' + response.statusText);
-        }
-        })
-        .catch(function (error) {
-            alert('Unable to connect to CocktailDB');
-        });
-    };
+// var displayDrinks = function (recipe, searchTerm) {
+//     if (recipe.length === 0) {
+//         drinkContainerEl.textContent = 'No Drinks Found';
+//         return;
+//     }
+
+//     drinkSearchTerm.textContent = searchTerm;
+
+//     for (var index = 0; index < recipe.length; index++) {
+//         var drinkName = recipe[index].drinks.strDrink;
+
+//         var drinkEl = document.createElement('a');
+//         drinkEl.classList = 'list-item flex-row justify-space-between align-center';
+//         drinkEl.setAttribute('href', './drink-recipe.html?drink=' + drinkName);
+
+//         var titleEl = document.createElement('span');
+//         titleEl.textContent = drinkName;
+
+//         drinkEl.appendChild(titleEl);
+
+//         var statusEl = document.createElement('span');
+//         statusEl.classList = 'flex-row align-center';
+
+//         drinkEl.appendChild(statusEl);
+
+//         drinkContainerEl.appendChild(drinkEl);
+
+//     };
+// };
+
+// function displayDrinks(recipe) {
+//     var cocktail = recipe.drinks[0];
+//     var cocktailDiv = document.getElementById("drink-search-term");
+//     // cocktail name
+
+
+//     cocktailDiv.innerHTML = '';
+//     var cocktailName = cocktail.strDrink;
+//     var heading = document.createElement("h1");
+//     heading.innerHTML = cocktailName;
+//     // cocktailDiv.appendChild("");
+//     cocktailDiv.appendChild(heading);
+//     // cocktail image
+//     var cocktailImg = document.createElement("img");
+//     cocktailImg.src = cocktail.strDrinkThumb;
+//     cocktailDiv.appendChild(cocktailImg);
+//     // cocktail ingredients
+//     var cocktailIngredients = document.createElement("ul");
+//     cocktailDiv.appendChild(cocktailIngredients);
+//     var getIngredients = Object.keys(cocktail)
+//     .filter(function (ingredient) {
+//         return ingredient.indexOf("strIngredient") == 0;
+//     })
+//     .reduce(function (ingredients, ingredient) {
+//         if (cocktail[ingredient] != null) {
+//             ingredients[ingredient] = cocktail[ingredient];
+//         }
+//         return ingredients;
+//     }, {});
+//     for (var key in getIngredients) {
+//         var value = getIngredients[key];
+//         listItem = document.createElement("li");
+//         listItem.innerHTML = value;
+//         cocktailIngredients.appendChild(listItem);
+//     }
+
+//     var audio= ("soundpour")[0];
+//     ("Drink").click(function() {
+//         audio.play();
+//     });
+// };
+
+drinkFormEl.addEventListener('click', drinkInputHandler);
