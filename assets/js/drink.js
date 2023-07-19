@@ -25,8 +25,6 @@ function displayDrinks(recipe) {
     var cocktail = recipe.drinks[0];
     var cocktailDiv = document.getElementById("drink-search-term");
     // cocktail name
-
-
     cocktailDiv.innerHTML = '';
     var cocktailName = cocktail.strDrink;
     var heading = document.createElement("h1");
@@ -57,3 +55,23 @@ function displayDrinks(recipe) {
         cocktailIngredients.appendChild(listItem);
     }
 };
+
+async function _getToken() {
+    const url = '';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '886b8f4589msh4b5135157d7d5bep1413bajsnc84e14b3155d',
+            'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+        }
+    };
+    try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    };
+};
+
+logSong();
