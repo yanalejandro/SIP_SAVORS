@@ -9,26 +9,36 @@
     <link rel="stylesheet" href="./assets/css/cocktail.css"/>
 </head>
     <body class="bg-gray-400">
-        <header class="text-center">
-            <h1 class="text-3xl font-bold underline">
-                Cocktails
-            <img rel="img" id="coking" href="./assets/sounds/50-best-cocktails-social.jpg"/>
-            </h1> 
-        </header>
-    <!------------------------------------READY TO MIX?----------------------------------->
-        <main class="flex justify-center block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
-            <section class="box-border text-white h-35 w-35 p-4 border-4 ... ">
-                <h2>Pick your Drink</h2>
-                <div class="drinknav">
-                <audio id="soundpour" preload="auto">
-                    <source src="./assets/sounds/Pour.mp3"></source>
-                </audio>
-                <input id="cocktailTxt" type="text" placeholder="Let's do it..">
-                <button type="submit" id="drink" class="text-2xl focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Pour</button>
-            </section>
+        <!-- NAVBAR -->
+        <nav class="border-gray-200 bg-gray-800">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4">
+                <a href="./index.html" class="flex items-center">
+                    <img src="./assets/images-sounds/sipsavors_bl.png" class="h-8 mr-3" alt="SipSavors Logo" />
+                </a>
+                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden text-gray-400 hover:bg-gray-700 focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- SEARCH -->
+        <main class="flex h-screen bg-center bg-cover bg-no-repeat bg-[url('./assets/images-sounds/50-best-cocktails-social.jpg')] bg-gray-700 bg-blend-multiply">
+        <div class="m-auto max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Pick Your Poison</h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Enter your cocktail of choice below and we'll take care of the rest:</p>
+            <audio id="soundpour" preload="auto">
+                <source src="./assets/images-sounds/Pour.mp3"></source>
+            </audio>
+            <!-- SEARCH INPUT -->
+            <input id="cocktailTxt" type="text" class="mb-3 bg-gray-600 border-gray-500 placeholder-gray-400 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-3" placeholder="Let' Do This...">
+            <button type="submit" id="drink" class="text-2xl focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">POUR</button>
+        </div>
     </main>
-    <div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative w-full max-w-md max-h-full">
+    <!-- NO TEXT ALERT -->
+    <div id="popup-modal" tabindex="-1" class="flex h-screen fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="m-auto relative w-full max-w-md max-h-full">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">

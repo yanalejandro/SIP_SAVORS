@@ -9,30 +9,43 @@
     <title>Recipe</title>
 </head>
 
-<body class="flex flex-col flex-wrap min-100-vh bg-gray-700">
-    <header class="text-center h-screen">
-        <h1 class="mb-2 text-8xl font-bold tracking-tight text-white">Your Cocktail of Choice</h1>
-        <img rel="img" id="drking" href="./assets/sounds/il_fullxfull.2780059757_6qh8.jpg.avif"/>
-
-        <div>
-            <button id="back-btn" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+<body class="bg-gray-700">
+    <!-- NAVBAR -->
+    <nav class="border-gray-200 bg-gray-800">
+        <!-- GO HOME -->
+        <div class="max-w-screen-xl flex items-center justify-center mx-auto p-4">
+            <a href="./index.html" class="flex items-center">
+                <img src="./assets/images-sounds/sipsavors_bl.png" class="h-8 mr-3" alt="SipSavors Logo" />
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden text-gray-400 hover:bg-gray-700 focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+            <!-- GO BACK TO SEARCH -->
+            <button id="back-btn" type="button" class="items-center justify-center mr-4 bg-green-400 hover:bg-green-600 focus:ring-gray-700 border-green-800 font-medium rounded-full text-sm px-5 py-2.5">
                 Go Back
             </button>
         </div>
-    </header>
+        
+    </nav>
     
-    <main class="items-start justify-center place-content-center block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700 text-center">
+    <main class="flex flex-row flex-wrap h-screen items-center justify-center text-center bg-center bg-cover bg-no-repeat bg-[url('./assets/images-sounds/Cocktails-scaled.jpg')] bg-gray-700 bg-blend-multiply">
+        <!-- DRINK RECIPE -->
         <section id="drink-form" class="place-content-center block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
-            
             <h1>
                 <span class="mb-2 text-2xl font-bold tracking-tight text-white" id="drink-search-term"></span>
-                <h2 class="mb-2 text-3xl font-bold tracking-tight text-white">Recommended Song</h2>
-                <span class="mb-2 text-2xl font-bold tracking-tight text-white" id="song-info"></span>
-                <audio controls>
-                    <source id="song-player" />
-                </audio>
-                <a id="song-link" class="mb-2 text-2xl font-bold tracking-tight text-white text-center">LINK</a>
             </h1>
+        </section>
+        <!-- SONG RECOMMENDATION -->
+        <section class="place-content-center block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700 ">
+            <h2 class="mb-2 text-3xl font-bold tracking-tight text-white">Recommended Song</h2>
+            <span class="mb-2 text-2xl font-bold tracking-tight text-white" id="song-info"></span>
+            <audio class="m-auto mb-2" controls>
+                <source id="song-player" />
+            </audio>
+            <a id="song-link" class="mb-2 text-2xl font-bold tracking-tight text-white text-center">LINK</a>
         </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
